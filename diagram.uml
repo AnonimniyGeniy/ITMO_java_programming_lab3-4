@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="667.4336504219057" y="-14.293012077031896">SpaceObject</node>
+    <node x="464.0733233535659" y="164.24768581626986">SpaceShip</node>
+    <node x="-37.38580898359558" y="384.4570086943268">Shorty</node>
+    <node x="712.0675746632171" y="447.0079223017221">AstroShorty</node>
+    <node x="199.6266773198719" y="331.860156817851">Astronomer</node>
+    <node x="901.9589266260393" y="152.47534241377403">Planet</node>
+    <node x="873.0142455046504" y="287.89226846252546">Professions</node>
+    <node x="452.18610530027235" y="49.731410224415704">Movable</node>
+    <node x="676.4433832133772" y="131.18775305164363">Profession</node>
+    <node x="676.5795262880316" y="278.18050236941167">Policeman</node>
+    <node x="244.86457459623443" y="187.73753953137583">Main</node>
+    <node x="248.21655637294842" y="535.3086057108985">PoliceShorty</node>
+    <node x="472.069254456" y="415.6387440949329">Plant</node>
+    <node x="-64.59463538730648" y="238.89193077934382">Observe</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="PoliceShorty" target="Shorty" relationship="GENERALIZATION">
+      <point x="4.436270515952856E-4" y="-38.49960571089849" />
+      <point x="327.717" y="514.0" />
+      <point x="51.114000000000004" y="514.0" />
+      <point x="-1.9101640441476775E-4" y="49.49999130567318" />
+    </edge>
+    <edge source="Policeman" target="Profession" relationship="GENERALIZATION">
+      <point x="-67.99952628803157" y="4.976305883133136E-4" />
+      <point x="647.0" y="316.681" />
+      <point x="647.0" y="169.688" />
+      <point x="-74.00038321337718" y="2.4694835636296375E-4" />
+    </edge>
+    <edge source="Astronomer" target="Profession" relationship="GENERALIZATION">
+      <point x="102.00032268012811" y="-10.86015681785102" />
+      <point x="647.0" y="392.5" />
+      <point x="647.0" y="169.688" />
+      <point x="-74.00038321337718" y="2.4694835636296375E-4" />
+    </edge>
+    <edge source="Astronomer" target="Observe" relationship="REALIZATION">
+      <point x="0.0" y="-71.5" />
+      <point x="301.6266773198719" y="282.23753953137583" />
+      <point x="102.0" y="5.345608752032007" />
+    </edge>
+    <edge source="SpaceShip" target="SpaceObject" relationship="GENERALIZATION">
+      <point x="75.99967664643407" y="3.1418373012570555E-4" />
+      <point x="871.0" y="235.748" />
+      <point x="871.0" y="175.0" />
+      <point x="841.943" y="175.0" />
+      <point x="74.50934957809432" y="38.5000120770319" />
+    </edge>
+    <edge source="AstroShorty" target="Shorty" relationship="GENERALIZATION">
+      <point x="-77.49957466321712" y="-0.36892230172207974" />
+      <point x="684.08" y="485.139" />
+      <point x="684.08" y="514.0" />
+      <point x="51.114000000000004" y="514.0" />
+      <point x="-1.9101640441476775E-4" y="49.49999130567318" />
+    </edge>
+    <edge source="Planet" target="SpaceObject" relationship="GENERALIZATION">
+      <point x="-92.99992662603938" y="-3.424137740353217E-4" />
+      <point x="871.0" y="179.475" />
+      <point x="871.0" y="175.0" />
+      <point x="841.943" y="175.0" />
+      <point x="74.50934957809432" y="38.5000120770319" />
+    </edge>
+    <edge source="SpaceShip" target="Movable" relationship="REALIZATION">
+      <point x="-13.887218053293566" y="-71.5" />
+      <point x="0.0" y="26.999999999999993" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.7623456790123457" showDependencies="false" x="630.3744939271264" y="315.55870445344135" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

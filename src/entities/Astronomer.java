@@ -5,7 +5,7 @@ import interfaces.*;
 
 public class Astronomer extends Profession implements Observe {
     public Astronomer() {
-        super("entities.Astronomer");
+        super("Astronomer");
     }
 
     public int getPosition(SpaceObject object) {
@@ -42,6 +42,6 @@ public class Astronomer extends Profession implements Observe {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return super.hashCode() + ((name  == null) ? 0 : name.hashCode() * 37);
     }
 }

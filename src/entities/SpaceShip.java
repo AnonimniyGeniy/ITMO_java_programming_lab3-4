@@ -46,7 +46,7 @@ public class SpaceShip extends SpaceObject implements Movable {
 
     @Override
     public String toString() {
-        return "entities.SpaceShip " + name +
+        return "SpaceShip " + name +
                 " at Position " + position;
     }
 
@@ -62,14 +62,26 @@ public class SpaceShip extends SpaceObject implements Movable {
         this.speed += extraSpeed;
         System.out.println("Space ship " + name + " got extra speed " + extraSpeed);
     }
-
+    /*
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (super.equals(obj)){
+
+            SpaceShip sub = (SpaceShip) obj;
+            return content == sub.content && crew == sub.crew;
+        }
+        return false;
+    }*/
+    /*
+    @Override
+    public boolean equals(Object obj){
+        return false;
     }
+    */
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return 0;
+        //return super.hashCode() + crew.hashCode() + content.hashCode();
     }
 }

@@ -1,9 +1,14 @@
 import entities.*;
-import java.util.Random;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
+        Policeman abc = new Policeman();
+        System.out.println("---------------");
+
         ArrayList<Shorty> crew = new ArrayList<Shorty>();
         ArrayList<Plant> plants = new ArrayList<Plant>();
         crew.add(new AstroShorty("Neznaika"));
@@ -14,8 +19,24 @@ public class Main {
         plants.add(new Plant("Pumpkin", 3, "pumpkins"));
         plants.add(new Plant("tomato", 2, "berries"));
         SpaceShip ship = new SpaceShip("Ship 1", crew, plants);
-        System.out.println(ship);
+        /*
+        SpaceShip ship1 = new SpaceShip("Ship 2", crew, plants);
+        SpaceShip ship3 = new SpaceShip("Ship 1", crew, plants);
+        HashSet<SpaceShip> myset = new HashSet<>();
+        myset.add(ship);
+        myset.add(ship1);
+
+        System.out.println(myset.contains(ship));
+        System.out.println(myset.contains(ship1));
+        System.out.println(myset.contains(ship3));
+        myset.add(ship3);
+        System.out.println(myset.contains(ship));
+        System.out.println(myset.contains(ship1));
+        System.out.println(myset.contains(ship3));
+        //System.out.println(ship);
         //System.out.println(ship.Crew());
+        */
+
         Planet earth = new Planet("Earth", 10000, 0, 0);
         Planet moon = new Planet("moon", 3000, 5000, 500);
         ship.getSpeed(10000);
@@ -24,11 +45,11 @@ public class Main {
         int speed = davilonskiyAstronom.astro.getSpeed(ship);
         PoliceShorty Rzhigl = new PoliceShorty("Rzhigl");
         PoliceShorty Spruts = new PoliceShorty("Spruts");
-        SpeechSpeed sp = SpeechSpeed.MEDLENNO;
-        int a = new Random().nextInt();
-        if (a >= 1000){
+        SpeechSpeed sp;
+        double a = Math.random();
+        if (a > 0.5) {
             sp = SpeechSpeed.MEDLENNO;
-        }else{
+        } else {
             sp = SpeechSpeed.NEMEDLENNO;
         }
         //davilonskiyAstronom.astro.GetSpeed(ship);

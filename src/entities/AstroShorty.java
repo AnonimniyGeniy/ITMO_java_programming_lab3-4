@@ -6,6 +6,7 @@ public class AstroShorty extends Shorty {
     public AstroShorty(String name) {
         super(name);
         this.astro = new Astronomer();
+        System.out.println("Astronomer constructor called");
     }
 
     @Override
@@ -20,6 +21,6 @@ public class AstroShorty extends Shorty {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return super.hashCode() + astro.hashCode();
     }
 }

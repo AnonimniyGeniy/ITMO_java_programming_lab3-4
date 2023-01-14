@@ -3,12 +3,68 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="244.86457459623443" y="187.73753953137583">Main</node>
+    <node x="80.0" y="617.5">entities.SpaceObject</node>
+    <node x="78.5" y="384.5">entities.Astronomer</node>
+    <node x="-154.0" y="651.0">interfaces.Movable</node>
+    <node x="472.0" y="417.5">entities.Policeman</node>
+    <node x="-168.0" y="157.5">entities.AstroShorty</node>
+    <node x="38.5" y="180.0">interfaces.Observe</node>
+    <node x="418.5" y="888.5">entities.SpeechSpeed</node>
+    <node x="503.5" y="639.5">Main</node>
+    <node x="207.0" y="888.5">entities.Planet</node>
+    <node x="272.0" y="157.5">entities.PoliceShorty</node>
+    <node x="472.0" y="157.5">entities.Profession</node>
+    <node x="311.5" y="617.5">entities.Plant</node>
+    <node x="-168.0" y="-93.5">entities.Shorty</node>
+    <node x="-174.0" y="855.5">entities.SpaceShip</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Compact" zoom="0.81375" showDependencies="false" x="525.502304147466" y="302.6651305683562" />
-  <SelectedNodes />
+  <edges>
+    <edge source="entities.Policeman" target="entities.Profession" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="entities.Planet" target="entities.SpaceObject" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="300.0" y="818.0" />
+      <point x="180.0" y="818.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="entities.SpaceShip" target="interfaces.Movable" relationship="REALIZATION">
+      <point x="-80.0" y="-82.5" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="entities.Astronomer" target="entities.Profession" relationship="GENERALIZATION">
+      <point x="80.0" y="-93.5" />
+      <point x="300.0" y="358.0" />
+      <point x="560.0" y="358.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="entities.PoliceShorty" target="entities.Shorty" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="360.0" y="118.0" />
+      <point x="-40.0" y="118.0" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="entities.SpaceShip" target="entities.SpaceObject" relationship="GENERALIZATION">
+      <point x="80.0" y="-82.5" />
+      <point x="80.0" y="818.0" />
+      <point x="180.0" y="818.0" />
+      <point x="0.0" y="60.5" />
+    </edge>
+    <edge source="entities.AstroShorty" target="entities.Shorty" relationship="GENERALIZATION">
+      <point x="40.0" y="-60.5" />
+      <point x="0.0" y="71.5" />
+    </edge>
+    <edge source="entities.Astronomer" target="interfaces.Observe" relationship="REALIZATION">
+      <point x="-80.0" y="-93.5" />
+      <point x="0.0" y="38.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.7365088105726871" showDependencies="false" x="485.9252336448622" y="756.0407476635528" />
+  <SelectedNodes>
+    <node>entities.SpaceObject</node>
+  </SelectedNodes>
   <Categories>
     <Category>Constructors</Category>
     <Category>Inner Classes</Category>

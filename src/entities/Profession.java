@@ -3,7 +3,11 @@ package entities;
 import java.util.Objects;
 
 public abstract class Profession {
+    {
+        System.out.println("Init block Profession called");
+    }
     public Profession(String name) {
+        System.out.println("Profession constructor called");
         this.name = name;
     }
 
@@ -11,7 +15,7 @@ public abstract class Profession {
 
     @Override
     public String toString() {
-        return "entities.Profession{" +
+        return "Profession{" +
                 "Name='" + name + '\'' +
                 '}';
     }
@@ -30,6 +34,9 @@ public abstract class Profession {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        int prime = 31;
+        int result = 13;
+        result = prime * result + ((name  == null) ? 0 : name.hashCode());
+        return result;
     }
 }

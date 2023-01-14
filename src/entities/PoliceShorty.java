@@ -7,7 +7,7 @@ public class PoliceShorty extends Shorty {
 
     @Override
     public String toString() {
-        return super.toString() + " " + "entities.Policeman";
+        return super.toString() + " " + "Policeman";
     }
 
     @Override
@@ -17,6 +17,6 @@ public class PoliceShorty extends Shorty {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return super.hashCode() + "Policeman".hashCode();
     }
 }

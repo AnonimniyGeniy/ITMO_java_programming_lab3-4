@@ -34,8 +34,13 @@ public class Plant {
         return size == sub.size  && name == sub.name && type == sub.type;
     }
 
-    @Override
+    //@Override
     public int hashCode() {
-        return Objects.hash(size, name, type);
+        int prime = 31;
+        int result = 23;
+        result = prime * result + ((name  == null) ? 0 : name.hashCode());
+        result = prime * result + size;
+        result = prime * result + ((type  == null) ? 0 : type.hashCode());
+        return result;
     }
 }

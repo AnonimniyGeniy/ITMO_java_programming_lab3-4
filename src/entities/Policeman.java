@@ -1,15 +1,25 @@
 package entities;
 
 public class Policeman extends Profession {
+    {
+        System.out.println("Init block policeman called");
+    }
+
     public Policeman() {
-        super("entities.Policeman");
+        super("Policeman");
+        System.out.println("Policeman constructor called");
     }
 
     @Override
     public String toString() {
         return name;
     }
-
+    /*
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+    */
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
@@ -17,6 +27,6 @@ public class Policeman extends Profession {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return super.hashCode() + 97;
     }
 }

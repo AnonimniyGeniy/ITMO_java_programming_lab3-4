@@ -10,11 +10,19 @@ public class Planet extends SpaceObject {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (obj == this){
+            return true;
+        }
+        if(obj == null || obj.getClass() != this.getClass()){
+            return false;
+        }
+        Planet sub = (Planet) obj;
+
+        return super.equals(obj) && sub.outSpeed == this.outSpeed;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return super.hashCode() + 53;
     }
 }

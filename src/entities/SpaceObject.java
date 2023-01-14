@@ -30,8 +30,14 @@ public class SpaceObject {
     }
 
     @Override
+
     public int hashCode() {
-        return Objects.hash(name, position, speed);
+        int prime = 31;
+        int result = 17;
+        result = prime * result + ((name  == null) ? 0 : name.hashCode());
+        result = prime * result + position;
+        result = prime * result + speed;
+        return result;
     }
 
 }

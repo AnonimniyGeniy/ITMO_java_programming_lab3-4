@@ -1,8 +1,7 @@
 package entities;
 
-import javax.swing.*;
-import java.awt.event.*;
 import java.util.Objects;
+
 
 public abstract class Shorty {
 
@@ -13,9 +12,11 @@ public abstract class Shorty {
         SpeechSpeed sp = speed;
         switch (speed) {
             case MEDLENNO -> {
-                Timer countdown = new Timer(1000, null);
-                countdown.setRepeats(false);
-                countdown.start();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    //
+                }
                 break;
             }
             case NEMEDLENNO -> {
@@ -48,6 +49,9 @@ public abstract class Shorty {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        int prime = 31;
+        int result = 47;
+        result = prime * result + ((name  == null) ? 0 : name.hashCode());
+        return result;
     }
 }

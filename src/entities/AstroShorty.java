@@ -6,7 +6,7 @@ public class AstroShorty extends Shorty {
     public AstroShorty(String name) {
         super(name);
         this.astro = new Astronomer();
-        System.out.println("Astronomer constructor called");
+        //System.out.println("Astronomer constructor called");
     }
 
     @Override

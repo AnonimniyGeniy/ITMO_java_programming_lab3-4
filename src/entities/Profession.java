@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public abstract class Profession {
     {
-        System.out.println("Init block Profession called");
+        //System.out.println("Init block Profession called");
     }
     public Profession(String name) {
-        System.out.println("Profession constructor called");
+        //System.out.println("Profession constructor called");
         this.name = name;
     }
 

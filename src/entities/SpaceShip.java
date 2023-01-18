@@ -29,8 +29,8 @@ public class SpaceShip extends SpaceObject implements Movable {
     */
     ArrayList<Shorty> crew = new ArrayList<Shorty>();
 
-    public SpaceShip(String name, ArrayList<Shorty> shorties, ArrayList<Plant> seeds) {
-        super(name, 0, 0);
+    public SpaceShip(String name, ArrayList<Shorty> shorties, ArrayList<Plant> seeds, Planet origin) {
+        super(name, 0, 0, 100, origin.location);
         this.crew = shorties;
         this.content = seeds;
     }

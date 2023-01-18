@@ -1,10 +1,12 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class Planet extends SpaceObject {
     public int outSpeed;
-
-    public Planet(String name, int outSpeed, int position, int speed) {
-        super(name, position, speed);
+    //ArrayList<SpaceObject> satellites = new ArrayList<>();
+    public Planet(String name, int outSpeed, int position, int speed, int weight, int x, int y, int z) {
+        super(name, position, speed, weight, new Location(x, y, z));
         this.outSpeed = outSpeed;
     }
 

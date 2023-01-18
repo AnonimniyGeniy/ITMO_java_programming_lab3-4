@@ -2,12 +2,12 @@ package entities;
 
 public class Policeman extends Profession {
     {
-        System.out.println("Init block policeman called");
+        //System.out.println("Init block policeman called");
     }
 
     public Policeman() {
         super("Policeman");
-        System.out.println("Policeman constructor called");
+        //System.out.println("Policeman constructor called");
     }
 
     @Override

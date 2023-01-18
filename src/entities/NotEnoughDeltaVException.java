@@ -1,8 +1,8 @@
 package entities;
 
 public class NotEnoughDeltaVException extends Exception {
-    private int DeltaV;
-    private int AddedSpeed;
+    private final int DeltaV;
+    private final int AddedSpeed;
 
     public int getDeltaV() {
         return DeltaV;

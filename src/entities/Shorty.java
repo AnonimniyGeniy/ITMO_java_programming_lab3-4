@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Objects;
-
 
 public abstract class Shorty {
 
@@ -9,7 +7,6 @@ public abstract class Shorty {
 
     //entities.Profession profession;
     public void Call(Shorty companion, String speech, SpeechSpeed speed) {
-        SpeechSpeed sp = speed;
         switch (speed) {
             case MEDLENNO -> {
                 try {
@@ -44,7 +41,7 @@ public abstract class Shorty {
             return false;
         }
         Shorty sub = (Shorty) obj;
-        return name == sub.name;
+        return name.equals(sub.name);
     }
 
     @Override

@@ -9,9 +9,9 @@ interface Add {
 
 public class Main {
     static class Space {
-        static ArrayList<SpaceObject> planets = new ArrayList<>();
-        static ArrayList<SpaceObject> ships = new ArrayList<>();
-        static ArrayList<SpaceObject> other = new ArrayList<>();
+        static final ArrayList<SpaceObject> planets = new ArrayList<>();
+        static final ArrayList<SpaceObject> ships = new ArrayList<>();
+        static final ArrayList<SpaceObject> other = new ArrayList<>();
 
     }
 
@@ -28,7 +28,7 @@ public class Main {
         Space.other.add(new SpaceObject("meteor 1", 300, 100, new Location(earth)));
         Space.other.add(new SpaceObject("meteor 2", 200, 230, new Location(earth)));
 
-        SpaceShip ship = new SpaceShip("Ship 1", earth, 10000);
+        SpaceShip ship = new SpaceShip("Ship 1", earth, 3000);
         //SpaceShip ship = new SpaceShip("Ship1", new ArrayList<Shorty>(), new ArrayList<Plant>(), earth, 10000);
 
         Space.ships.add(ship);
@@ -95,8 +95,8 @@ public class Main {
         observatory.getSpeed();
         System.out.println("Astronomers concluded that on space ship can be up to " + (observatory.getWeight() / 3) + " Shorties");
         observatory.getLocation();
-        for (SpaceObject planet:Space.planets){
-            if (planet.location.Distance(ship.location) < 2000){
+        for (SpaceObject planet : Space.planets) {
+            if (planet.location.Distance(ship.location) < 2000) {
                 System.out.println("Astronomers coucluded that Ship is close to the planet " + planet.name);
             }
         }

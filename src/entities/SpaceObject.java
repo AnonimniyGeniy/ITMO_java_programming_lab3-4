@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Objects;
-
 public class SpaceObject {
     public String name;
     int speed;
@@ -29,7 +27,7 @@ public class SpaceObject {
             return false;
         }
         SpaceObject sub = (SpaceObject) obj;
-        return name == sub.name && speed == sub.speed && sub.weight == weight;
+        return name.equals(sub.name) && speed == sub.speed && sub.weight == weight;
     }
 
     @Override

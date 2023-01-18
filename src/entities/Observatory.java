@@ -12,7 +12,7 @@ public class Observatory {
     }
 
     String name;
-    ArrayList<AstroShorty> stuff = new ArrayList<>();
+    ArrayList<AstroShorty> stuff;
     Telescope telescope;
 
     public void locateTelescope(SpaceObject target) {

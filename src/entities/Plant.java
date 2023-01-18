@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Objects;
-
 public class Plant {
     String name;
     int size;
@@ -31,7 +29,7 @@ public class Plant {
             return false;
         }
         Plant sub = (Plant) obj;
-        return size == sub.size  && name == sub.name && type == sub.type;
+        return size == sub.size  && name.equals(sub.name) && type.equals(sub.type);
     }
 
     //@Override

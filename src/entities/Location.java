@@ -19,7 +19,9 @@ public class Location {
 
     public int Distance(Location obj) {
         class RelativeCoordinates {
-            int rx, ry, rz;
+            final int rx;
+            final int ry;
+            final int rz;
 
             public RelativeCoordinates(int x, int y, int z, Location obj) {
                 this.rx = x - obj.x;
@@ -37,8 +39,7 @@ public class Location {
 
     @Override
     public String toString() {
-        String ans = " x = " + x + "; y = " + y + "; z = " + z + " ";
-        return ans;
+        return " x = " + x + "; y = " + y + "; z = " + z + " ";
     }
 
     @Override

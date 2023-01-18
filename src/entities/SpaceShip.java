@@ -6,13 +6,13 @@ import interfaces.*;
 
 
 public class SpaceShip extends SpaceObject implements Movable {
-    ArrayList<Plant> content = new ArrayList<Plant>();
+    ArrayList<Plant> content;
     int deltaVelocity;
     ArrayList<Shorty> crew = new ArrayList<Shorty>();
 
     public SpaceShip(String name, ArrayList<Shorty> shorties, ArrayList<Plant> seeds, Planet origin, int DV) {
         super(name, 0, 90, origin.location);
-        if (crew.size() == 0){
+        if (crew.size() == 0) {
             throw new NoCrewException();
         }
         this.crew = shorties;
@@ -62,8 +62,9 @@ public class SpaceShip extends SpaceObject implements Movable {
         return crewstr;
     }
 
-    public void getSpeed(int extraSpeed) throws NotEnoughDeltaVException{
-        if (deltaVelocity < extraSpeed) throw new NotEnoughDeltaVException("Not enough DeltaV to get speed", deltaVelocity, extraSpeed);
+    public void getSpeed(int extraSpeed) throws NotEnoughDeltaVException {
+        if (deltaVelocity < extraSpeed)
+            throw new NotEnoughDeltaVException("Not enough DeltaV to get speed", deltaVelocity, extraSpeed);
         this.speed += extraSpeed;
         this.deltaVelocity -= extraSpeed;
         System.out.println("Space ship " + name + " got extra speed " + extraSpeed + " AND spent some inner energy...");
@@ -86,8 +87,8 @@ public class SpaceShip extends SpaceObject implements Movable {
 }
 
 
-class NoCrewException extends RuntimeException{
-    public NoCrewException(){
+class NoCrewException extends RuntimeException {
+    public NoCrewException() {
         super("No crew in ship");
     }
 }

@@ -8,9 +8,9 @@ public class Astronomer extends Profession implements Observe {
         super("Astronomer");
     }
 
-    public int getPosition(SpaceObject object) {
-        System.out.println("Position of " + object.name + " is " + object.position);
-        return object.position;
+    public Location getLocation(SpaceObject object) {
+        System.out.println("Position of " + object.name + " is " + object.location.toString());
+        return object.location;
     }
 
     public int getSpeed(SpaceObject object) {

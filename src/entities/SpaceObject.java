@@ -4,15 +4,13 @@ import java.util.Objects;
 
 public class SpaceObject {
     String name;
-    int position;
     int speed;
     int weight;
     long gravity_field;
     Location location;
-    public SpaceObject(String name, int position, int speed, int weight, Location location) {
+    public SpaceObject(String name, int speed, int weight, Location location) {
         this.name = name;
         this.speed = speed;
-        this.position = position;
         this.weight = weight;
         this.gravity_field = Math.round(Math.sqrt(weight));
         this.location = location;
@@ -31,7 +29,7 @@ public class SpaceObject {
             return false;
         }
         SpaceObject sub = (SpaceObject) obj;
-        return name == sub.name && position == sub.position && speed == sub.speed && sub.weight == weight;
+        return name == sub.name && speed == sub.speed && sub.weight == weight;
     }
 
     @Override
@@ -40,7 +38,6 @@ public class SpaceObject {
         int prime = 31;
         int result = 17;
         result = prime * result + ((name  == null) ? 0 : name.hashCode());
-        result = prime * result + position;
         result = prime * result + speed;
         result = prime * result + weight;
         return result;

@@ -30,14 +30,31 @@ public class SpaceShip extends SpaceObject implements Movable {
     ArrayList<Shorty> crew = new ArrayList<Shorty>();
 
     public SpaceShip(String name, ArrayList<Shorty> shorties, ArrayList<Plant> seeds, Planet origin) {
-        super(name, 0, 0, 100, origin.location);
+        super(name, 0,  100, origin.location);
         this.crew = shorties;
         this.content = seeds;
     }
 
+    public SpaceShip(String name, Planet origin) {
+        super(name, 0,  100, origin.location);
+        ArrayList<Plant> plants = new ArrayList<Plant>();
+        plants.add(new Plant("Melon", 5, "melons"));
+        plants.add(new Plant("Pumpkin", 3, "pumpkins"));
+        plants.add(new Plant("tomato", 2, "berries"));
+
+        ArrayList<Shorty> crew = new ArrayList<Shorty>();
+        crew.add(new AstroShorty("Neznaika"));
+        crew.add(new AstroShorty("Znaika"));
+        crew.add(new AstroShorty("Vintik"));
+        crew.add(new PoliceShorty("Shpuntik"));
+
+        this.crew = crew;
+        this.content = plants;
+    }
+
     public void move(Planet target) {
         if (this.speed >= target.outSpeed) {
-            this.position = target.position;
+            this.location = target.location;
             System.out.println(this.name + " Successfully came to planet " + target.name);
         } else {
             System.out.println(this.name + "Cannot move to target" + target.name + " not enough speed");
@@ -47,7 +64,7 @@ public class SpaceShip extends SpaceObject implements Movable {
     @Override
     public String toString() {
         return "SpaceShip " + name +
-                " at Position " + position;
+                " at Location " + location;
     }
 
     public String crew() {

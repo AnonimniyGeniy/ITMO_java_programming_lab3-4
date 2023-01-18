@@ -1,40 +1,52 @@
 package entities;
 
 public class Location {
-    int x;
-    int y;
-    int z;
+    public int x;
+    public int y;
+    public int z;
 
-    public Location(SpaceObject parent){
+    public Location(SpaceObject parent) {
         this.x = parent.location.x;
         this.y = parent.location.y;
         this.z = parent.location.z;
     }
 
-    public Location(int x, int y, int z){
+    public Location(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    long Distance(Location obj){
-        int dx = x - obj.x;
-        int dy = y - obj.y;
-        int dz = z - obj.z;
-        return Math.round(Math.sqrt(dx*dx + dy*dy + dz*dz));
+    public int Distance(Location obj) {
+        class RelativeCoordinates {
+            int rx, ry, rz;
+
+            public RelativeCoordinates(int x, int y, int z, Location obj) {
+                this.rx = x - obj.x;
+                this.ry = y - obj.y;
+                this.rz = z - obj.z;
+            }
+
+            int getVectorLength() {
+                return (int) Math.round(Math.sqrt(rx * rx + ry * ry + rz * rz));
+            }
+        }
+        RelativeCoordinates coordinates = new RelativeCoordinates(x, y, z, obj);
+        return coordinates.getVectorLength();
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         String ans = " x = " + x + "; y = " + y + "; z = " + z + " ";
-        return  ans;
+        return ans;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == this){
+        if (obj == this) {
             return true;
         }
-        if(obj == null || obj.getClass() != this.getClass()){
+        if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
         Location sub = (Location) obj;
@@ -44,6 +56,6 @@ public class Location {
 
     @Override
     public int hashCode() {
-        return x * 131  + y * 149 + z * 173;
+        return x * 131 + y * 149 + z * 173;
     }
 }

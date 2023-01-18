@@ -3,11 +3,11 @@ package entities;
 import java.util.Objects;
 
 public class SpaceObject {
-    String name;
+    public String name;
     int speed;
     int weight;
     long gravity_field;
-    Location location;
+    public Location location;
     public SpaceObject(String name, int speed, int weight, Location location) {
         this.name = name;
         this.speed = speed;

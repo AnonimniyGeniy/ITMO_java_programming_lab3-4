@@ -24,18 +24,41 @@ public class Main {
         Planet earth = new Planet("Earth", 10000, 0, 500000000, 0, 0, 0);
         Planet moon = new Planet("moon", 3000, 500, 700000, 10000, 10000, 1000);
 
-        Space.other.add(new SpaceObject("meteor 1", 300, 100, new Location(earth)));
-        Space.other.add(new SpaceObject("meteor 2",  200, 230, new Location(earth)));
 
-        SpaceShip ship = new SpaceShip("Ship 1", earth);
+        Space.other.add(new SpaceObject("meteor 1", 300, 100, new Location(earth)));
+        Space.other.add(new SpaceObject("meteor 2", 200, 230, new Location(earth)));
+
+        SpaceShip ship = new SpaceShip("Ship 1", earth, 10000);
+        //SpaceShip ship = new SpaceShip("Ship1", new ArrayList<Shorty>(), new ArrayList<Plant>(), earth, 10000);
+
         Space.ships.add(ship);
         Space.planets.add(earth);
-        ship.getSpeed(10000);
+        Space.planets.add(moon);
+
         AstroShorty davilonskiyAstronom = new AstroShorty("Davilonskiy Astronom");
         ArrayList<AstroShorty> obsStuff = new ArrayList<>();
-        obsStuff.add(davilonskiyAstronom);
 
-        Observatory observatory = new Observatory(obsStuff,moon);
+        obsStuff.add(davilonskiyAstronom);
+        Observatory observatory = new Observatory(obsStuff, moon) {
+            public String getStuff() {
+                String ans = "";
+                for (Shorty shorty : obsStuff) {
+                    ans += shorty.toString();
+                }
+                return ans;
+            }
+        };
+        observatory.locateTelescope(earth);
+        observatory.getObjects(Space.other);
+        observatory.getObjects(Space.ships);
+        System.out.println();
+        try {
+            ship.getSpeed(10000);
+        } catch (NotEnoughDeltaVException e) {
+            System.out.println("Exception: not enough DeltaV to get required speed ");
+            System.out.println("Added speed: " + e.getAddedSpeed());
+            System.out.println("DeltaVelocity: " + e.getDeltaV());
+        }
 
         davilonskiyAstronom.astro.getLocation(ship);
         int speed = davilonskiyAstronom.astro.getSpeed(ship);
@@ -63,9 +86,21 @@ public class Main {
         }
 
 
+        ship.location = new Location((ship.location.x + moon.location.x) / 2, (ship.location.y + moon.location.y) / 2 + 2000, (ship.location.z + moon.location.x) / 2);
+        System.out.println("Ship missed trajectory and mistake is 2000 points at y axis");
+
         ship.move(moon);
-
-
+        observatory.locateTelescope(ship);
+        //observatory.getWeight();
+        observatory.getSpeed();
+        System.out.println("Astronomers concluded that on space ship can be up to " + (observatory.getWeight() / 3) + " Shorties");
+        observatory.getLocation();
+        for (SpaceObject planet:Space.planets){
+            if (planet.location.Distance(ship.location) < 2000){
+                System.out.println("Astronomers coucluded that Ship is close to the planet " + planet.name);
+            }
+        }
+        System.out.println("Astronomers concluded that space ship is choosing place to land");
     }
 
 }
